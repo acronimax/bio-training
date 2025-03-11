@@ -1,0 +1,181 @@
+/* https://www.joshwcomeau.com/css/custom-css-reset/*/
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* https://www.joshwcomeau.com/css/custom-css-reset/*/
+
+body {
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  height: 100vh;
+}
+
+h1,
+h3,
+p,
+span {
+  color: #000;
+}
+
+.header-bio,
+.hobbies,
+.skills {
+  padding: 0 200px;
+  margin-top: 90px;
+  margin-bottom: 80px;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+@property --grayOne {
+  syntax: '<color>';
+  initial-value: #cacaca;
+  inherits: false;
+}
+
+@property --grayTwo {
+  syntax: '<color>';
+  initial-value: #f0f0f0;
+  inherits: false;
+}
+
+.external-btn {
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 50px;
+  background: linear-gradient(var(--grayOne), var(--grayTwo));
+  transition: --grayOne 600ms, --grayTwo 600ms;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.external-btn:hover {
+  cursor: pointer;
+  --grayOne: #f0f0f0;
+  --grayTwo: #cacaca;
+}
+
+.header-bio .header-bio-content,
+.hobbies .hobbies-content,
+.skills .skills-content {
+  padding: 30px;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.header-bio .header-bio-content h1,
+.hobbies .hobbies-content h3,
+.skills .skills-content h3 {
+  margin-bottom: 10px;
+}
+
+.header-bio img {
+  width: 100px;
+  height: 100px;
+  border-radius: 75px;
+  border: 1px solid #000;
+}
+
+.header-bio h1 {
+  font-size: 2em;
+}
+
+.header-bio p,
+.hobbies p {
+  font-size: 1em;
+}
+
+.hobbies ul li,
+.skills ul li {
+  display: flex;
+  margin-top: 8px;
+  gap: 15px;
+}
+
+/** Responsive **/
+
+@media only screen and (max-width: 600px) {
+  body {
+    height: 100%;
+  }
+
+  .header-bio h1 {
+    font-size: 1.5em;
+  }
+
+  .header-bio,
+  .hobbies,
+  .skills {
+    padding: 0 20px;
+    margin-top: 90px;
+    margin-bottom: 80px;
+  }
+}
