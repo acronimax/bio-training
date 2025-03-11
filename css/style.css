@@ -1,0 +1,17 @@
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(98,57,184,1) 35%);
+}
+
+h1, p {
+    color: #FFF;
+}
+
+.header-bio {
+    padding: 10px 100px;
+}
+
+.header-bio img {
+    width: 150px;
+    height: 150px;
+}
