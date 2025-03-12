@@ -24,7 +24,7 @@ a {
   text-decoration: none;
   border-radius: 50px;
   background: linear-gradient(var(--grayOne), var(--grayTwo));
-  transition: --grayOne 700ms, --grayTwo 700ms;
+  transition: --grayOne 500ms, --grayTwo 500ms;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
 
