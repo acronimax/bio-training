@@ -35,7 +35,9 @@ a:hover {
   color: #fff;
 }
 </style>
-<a target="_blank" role="link" rel="noopener noreferrer"></a>
+<a target="_blank" role="link" rel="noopener noreferrer">
+  <slot></slot>
+</a>
 `;
 
 class NeoLink extends HTMLElement {
@@ -52,10 +54,9 @@ class NeoLink extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     const anchor =  this.shadowRoot.querySelector('a');
     const link = this.getAttribute("link") || "#";
-    const text = this.getAttribute('text');
+    const label = this.getAttribute('label');
     anchor.setAttribute('href', link);
-    anchor.setAttribute('aria-label', `Read more about ${text}`);
-    anchor.append(text)
+    anchor.setAttribute('aria-label', `Read more about ${label}`);
   }
 }
 
