@@ -1,3 +1,5 @@
+# Bio Training Task
+
 ## Topics
 
 - HTML structure, semantic tags, performance optimization, web components, SEO best practices
@@ -5,4 +7,4 @@
 
 ### Resources 
 
-comming soon...
+coming soon...
