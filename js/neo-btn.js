@@ -1,32 +1,38 @@
 const template = document.createElement("template");
 template.innerHTML = `
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Atma&display=swap');
+
  @property --grayOne {
   syntax: '<color>';
-  initial-value: #cacaca;
+  initial-value: #5b55b1;
   inherits: false;
 }
 
 @property --grayTwo {
   syntax: '<color>';
-  initial-value: #f0f0f0;
+  initial-value: #6c65d3;
   inherits: false;
 }
 
 a {
   color: #000;
+  font-family: "Atma", system-ui;
+  font-weight: 400;
+  font-style: normal;
   padding: 10px 15px;
   text-decoration: none;
   border-radius: 50px;
   background: linear-gradient(var(--grayOne), var(--grayTwo));
-  transition: --grayOne 600ms, --grayTwo 600ms;
+  transition: --grayOne 700ms, --grayTwo 700ms;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
 
 a:hover {
   cursor: pointer;
-  --grayOne: #f0f0f0;
-  --grayTwo: #cacaca;
+  --grayOne: #6c65d3;
+  --grayTwo: #5b55b1;
+  color: #fff;
 }
 </style>
 <a target="_blank" role="link" rel="noopener noreferrer"></a>
@@ -35,6 +41,10 @@ a:hover {
 class NeoLink extends HTMLElement {
   constructor() {
     super();
+    const font = document.createElement("link");
+    font.href = "https://fonts.googleapis.com/css2?family=Atma&display=swap";
+    font.rel = "stylesheet"
+    document.head.appendChild(font);
   }
 
   connectedCallback() {
@@ -44,9 +54,8 @@ class NeoLink extends HTMLElement {
     const link = this.getAttribute("link") || "#";
     const text = this.getAttribute('text');
     anchor.setAttribute('href', link);
+    anchor.setAttribute('aria-label', `Read more about ${text}`);
     anchor.append(text)
-
-    console.log('shadows', this.shadowRoot.querySelector('a'));
   }
 }
 
